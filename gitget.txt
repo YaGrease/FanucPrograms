@@ -1,6 +1,0 @@
-bin
-prompt
-lcd C:\robot_backup
-cd /FR/tp
-mget *.ls
-quit
