@@ -1,0 +1,22 @@
+# FANUC system-generated files
+-bcked8-.ls
+-bcked9-.ls
+-bckedt-.ls
+
+# Error/alarm logs
+erract.ls
+errall.ls
+errapp.ls
+errcomm.ls
+errcurr.ls
+errext.ls
+errhist.ls
+errmot.ls
+errpwd.ls
+errsys.ls
+
+# History & diagnostics
+hist.ls
+logbook.ls
+vtrndiag.ls
+updtlog.ls
