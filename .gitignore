@@ -20,3 +20,7 @@ hist.ls
 logbook.ls
 vtrndiag.ls
 updtlog.ls
+
+# Node & JSON Downloadables
+/gateway/node_modules/
+/gateway/package-lock.json

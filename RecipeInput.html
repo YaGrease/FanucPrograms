@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recipe Station</title>
+  <style>
+    body { font-family: sans-serif; background:#15171C; color:#E8EBF1; padding:24px; }
+    .recipe-selector {
+        display: grid;
+        grid-template-columns: repeat(10, 46px);
+        gap: 7px;
+    }
+    .recipe-cell {
+        height: 46px;
+        border: 1px solid #E8EBF1;
+        background-color: #23272F;
+        color: white;
+        font-size: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .recipe-selected {
+        border: 2px solid #f8ec41;
+        background-color: #575f6e;
+    }
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(6, 80px);
+        gap: 8px;
+    }
+    .cell {
+        height: 80px;
+        border: 1px solid #E8EBF1;
+        background-color: #23272F;
+        color: white;
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .on {
+        border: 2px solid #f8ec41;
+        background-color: #575f6e;
+    }
+  </style>
+</head>
+<body>
+  <h1>Module Head</h1>
+  <div id="recipe-selector" class="recipe-selector"></div>
+  <div class="grid" id="grid"></div>
+  <p>Active: <span id="count">0</span></p>
+  <button onclick="console.log(buildPayload(0))">Test payload</button>
+  <button onclick="sendRecipe(curRecipe)">Send recipe</button>
+  <script>
+    const recipeDiv = document.getElementById("recipe-selector");
+    const recipes = Array.from({ length: 20 }, () => new Set());
+    let prevDiv = null;
+    let curRecipe = 0;
+    for (let i = 1; i < 21; i++)
+    {
+        const nDiv = document.createElement("div");
+        nDiv.classList.add('recipe-cell');
+        if (i == 1)
+        {
+            nDiv.classList.add('recipe-selected');
+            prevDiv = nDiv;
+        }
+        nDiv.addEventListener("click", (event) =>
+        {
+            if (prevDiv != nDiv)
+            {
+                prevDiv.classList.remove('recipe-selected');
+                nDiv.classList.add('recipe-selected');
+                prevDiv = nDiv;
+                curRecipe = i - 1;
+                drawGrid();
+            }
+        })
+        nDiv.textContent = i;
+        recipeDiv.appendChild(nDiv);
+    }
+    drawGrid();
+    function drawGrid(){
+        const gridDiv = document.getElementById("grid");
+        gridDiv.innerHTML = '';
+        for (let i = 31; i < 37; i++) 
+        {
+            for (let j = i; j > 0; j = j - 6)
+            {      
+                const nDiv = document.createElement("div");
+                nDiv.classList.add('cell');
+                if(recipes[curRecipe].has(j))
+                {
+                    nDiv.classList.add('on');
+                }
+                nDiv.addEventListener("click", (event) => 
+                {
+                    if(recipes[curRecipe].has(j))
+                    {
+                        recipes[curRecipe].delete(j);
+                        nDiv.classList.remove('on');
+                    }
+                    else
+                    {
+                        recipes[curRecipe].add(j);
+                        nDiv.classList.add('on');
+                    }
+                    document.getElementById('count').textContent = recipes[curRecipe].size;
+                });
+                document.getElementById('count').textContent = recipes[curRecipe].size;
+                nDiv.textContent = j;
+                gridDiv.appendChild(nDiv);
+            }
+        }
+    }
+    function buildPayload(curRecipe)
+    {
+        const base = 140 + (curRecipe * 37);
+        const set = recipes[curRecipe];
+        const writes = [];
+
+        writes.push({ reg: base, val: set.size });
+
+        for (let i = 1; i < 37; i++)
+        {
+            if (set.has(i))
+            {
+                writes.push({ reg: base + i, val: 1});
+            }
+            else
+            {
+                writes.push({ reg: base + i, val: 0});
+            }
+        }
+        return writes;
+    }
+    function sendRecipe(curRecipe)
+    {
+        const payload = buildPayload(curRecipe);
+
+        fetch('http://localhost:8080/api/write-recipe', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ recipe: curRecipe, writes: payload })
+        })
+            .then(response => response.json())
+            .then(data => console.log('server said:', data))
+            .catch(error => console.log('failed:', error));
+        
+    }
+  </script>
+</body>
+</html>
