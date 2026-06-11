@@ -3,8 +3,8 @@
 OWNER		= MNEDITOR;
 COMMENT		= "";
 PROG_SIZE	= 2092;
-CREATE		= DATE 26-05-19  TIME 15:48:52;
-MODIFIED	= DATE 26-05-19  TIME 15:48:52;
+CREATE		= DATE 26-06-11  TIME 15:42:28;
+MODIFIED	= DATE 26-06-11  TIME 15:42:28;
 FILE_NAME	= MASTER_R;
 VERSION		= 0;
 LINE_COUNT	= 76;
@@ -82,9 +82,9 @@ LOCAL_REGISTERS	= 0,0,0;
   58:J P[1:STATIC_DATUM] 100% FINE    ;
   59:   ;
   60:  ! Descend onto Datum point ;
-  61:  PR[1,3:TMP_DATUM]=PR[1,3:TMP_DATUM]-5    ;
+  61:  PR[1,3:TMP_DATUM]=PR[1,3:TMP_DATUM]-8    ;
   62:   ;
-  63:L PR[1:TMP_DATUM] 20mm/sec FINE    ;
+  63:L PR[1:TMP_DATUM] 40mm/sec FINE    ;
   64:   ;
   65:  ! Float the x and y ;
   66:  ! Compare actual vs expected and  ;
@@ -95,32 +95,32 @@ LOCAL_REGISTERS	= 0,0,0;
   71:  ! I will not use the correction y ;
   72:   ;
   73:  ! Ascend from the Datum point ;
-  74:L P[1:STATIC_DATUM] 20mm/sec FINE    ;
+  74:L P[1:STATIC_DATUM] 40mm/sec FINE    ;
   75:   ;
   76:  CALL PICK_AND_PLACE    ;
 /POS
 P[1:"STATIC_DATUM"]{
    GP1:
 	UF : 1, UT : 1,		CONFIG : 'L, 0, 0, 0',
-	X =      .643000  mm,	Y =     0.000000  mm,	Z =     6.375000  mm,
+	X =    50.971001  mm,	Y =   181.350006  mm,	Z =     9.258000  mm,
 	W =   180.000000 deg,	P =     0.000000 deg,	R =     0.000000 deg
 };
 P[2:"STATIC_REPO_RCP"]{
    GP1:
 	UF : 1, UT : 1,		CONFIG : 'L, 0, 0, 0',
-	X =   -54.334999  mm,	Y =   -10.121000  mm,	Z =    25.945999  mm,
+	X =    -3.966000  mm,	Y =   171.309998  mm,	Z =    27.500000  mm,
 	W =   180.000000 deg,	P =     0.000000 deg,	R =     0.000000 deg
 };
 P[3:"STATIC_CAMERA"]{
    GP1:
 	UF : 1, UT : 1,		CONFIG : 'L, 0, 0, 0',
-	X =   219.059006  mm,	Y =   152.022003  mm,	Z =    61.089001  mm,
+	X =   259.316986  mm,	Y =   329.428986  mm,	Z =   165.720001  mm,
 	W =   180.000000 deg,	P =     0.000000 deg,	R =     0.000000 deg
 };
 P[4:"STATIC_MOD_RCP"]{
    GP1:
 	UF : 1, UT : 1,		CONFIG : 'L, 0, 0, 0',
-	X =    59.286999  mm,	Y =     8.293000  mm,	Z =    31.302999  mm,
+	X =   109.771004  mm,	Y =   189.729996  mm,	Z =    32.464001  mm,
 	W =   180.000000 deg,	P =     0.000000 deg,	R =     0.000000 deg
 };
 /END
