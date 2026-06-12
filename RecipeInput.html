@@ -53,6 +53,9 @@
   <p>Active: <span id="count">0</span></p>
   <button onclick="console.log(buildPayload(0))">Test payload</button>
   <button onclick="sendRecipe(curRecipe)">Send recipe</button>
+  <button onclick="exportRecipes()">Export recipes</button>
+  <button onclick="saveRecipes()">Save</button>
+  <button onclick="sendAllRecipes()">Send all to controller</button>
   <script>
     const recipeDiv = document.getElementById("recipe-selector");
     const recipes = Array.from({ length: 20 }, () => new Set());
@@ -81,7 +84,45 @@
         nDiv.textContent = i;
         recipeDiv.appendChild(nDiv);
     }
-    drawGrid();
+    fetch('http://localhost:8080/api/load')
+        .then(response => response.json())
+        .then(data => {
+            for(let i = 0; i < 20; i++)
+            {
+                recipes[data[i].recipe - 1] = new Set(data[i].rcp_holes);
+            }
+            drawGrid();
+        });
+
+    async function sendAllRecipes() 
+    {
+        for (let i = 0; i < 20; i++)
+        {
+            const payload = buildPayload(i);
+            await fetch('http://localhost:8080/api/write-recipe', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ recipe: i + 1, writes: payload })
+            })
+                .then(response => response.json())
+                .then(result => console.log('sendAll result:', result))
+                .catch(error => console.log('sendAll failed', error));
+        }
+    }
+
+    function saveRecipes()
+    {
+        const data = recipes.map((set, index) => ({ recipe: index + 1, rcp_holes: [...set]}));
+        fetch('http://localhost:8080/api/save', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        })
+            .then(response => response.json())
+            .then(result => console.log('save result:', result))
+            .catch(error => console.log('save failed', error));
+    }
+
     function drawGrid(){
         const gridDiv = document.getElementById("grid");
         gridDiv.innerHTML = '';
@@ -115,6 +156,7 @@
             }
         }
     }
+
     function buildPayload(curRecipe)
     {
         const base = 140 + (curRecipe * 37);
@@ -136,6 +178,7 @@
         }
         return writes;
     }
+
     function sendRecipe(curRecipe)
     {
         const payload = buildPayload(curRecipe);
@@ -143,12 +186,32 @@
         fetch('http://localhost:8080/api/write-recipe', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ recipe: curRecipe, writes: payload })
+            body: JSON.stringify({ recipe: curRecipe + 1, writes: payload })
         })
             .then(response => response.json())
             .then(data => console.log('server said:', data))
             .catch(error => console.log('failed:', error));
         
+    }
+
+    function exportRecipes()
+    {
+      console.log('exportRecipes called');
+      const exportData = recipes.map((set, index) => ({
+        recipe: index + 1,
+        rcp_holes: [...set]
+      }));
+
+      const exportText = JSON.stringify(exportData);
+      console.log(exportText);
+
+      const blob = new Blob([exportText], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `recipes-${Date.now()}.json`;
+      a.click();
+      URL.revokeObjectURL(url);
     }
   </script>
 </body>

@@ -24,3 +24,4 @@ updtlog.ls
 # Node & JSON Downloadables
 /gateway/node_modules/
 /gateway/package-lock.json
+/gateway/recipes.json
