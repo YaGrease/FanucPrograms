@@ -1,0 +1,8 @@
+-prep to start making modules.
+  -figure out how to make the head release
+  Xfigure out how to make the metal plate not lift up. 
+  -build in error handling for the pin to make it pause if there is still a pin in it. 
+  -pre configure speeds as well
+  -have it message me if it errors.
+  -try pushing it in more at the end and less at the beginning.
+  
