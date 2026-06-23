@@ -1,8 +1,23 @@
 -prep to start making modules.
-  -figure out how to make the head release
+  Xfigure out how to make the head release
   Xfigure out how to make the metal plate not lift up. 
-  -build in error handling for the pin to make it pause if there is still a pin in it. 
-  -pre configure speeds as well
+  Xbuild in error handling for the pin to make it pause if there is still a pin in it. 
+  Xpre configure speeds as well
   -have it message me if it errors.
-  -try pushing it in more at the end and less at the beginning.
+  Xtry pushing it in more at the end and less at the beginning.
   
+
+Have 25 modules complete today.
+
+Other thoughts throughout the day.
+  XTalk to Dave Reid about the shroud
+
+take out waits 
+21 mm release set
+think about new algorithm for looking at the receptacle
+work instructions
+test validate.py
+check calibration along z axis as it transverses.
+Xfix y movement for second row and probably for second ice tray as well.
+recalibrate for y
+XBug fix slight offset caused by outdated P[]
