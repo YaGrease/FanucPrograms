@@ -2,13 +2,13 @@
 /ATTR
 OWNER		= MNEDITOR;
 COMMENT		= "";
-PROG_SIZE	= 2286;
-CREATE		= DATE 26-06-23  TIME 16:30:58;
-MODIFIED	= DATE 26-06-23  TIME 16:30:58;
+PROG_SIZE	= 2284;
+CREATE		= DATE 26-06-24  TIME 13:46:44;
+MODIFIED	= DATE 26-06-24  TIME 13:46:44;
 FILE_NAME	= MASTER_R;
 VERSION		= 0;
 LINE_COUNT	= 88;
-MEMORY_SIZE	= 2702;
+MEMORY_SIZE	= 2700;
 PROTECT		= READ_WRITE;
 TCD:  STACK_SIZE	= 0,
       TASK_PRIORITY	= 50,
@@ -48,8 +48,8 @@ LOCAL_REGISTERS	= 0,0,0;
   24:  R[17:ICE_TRAY_YOFFSET]=107.95    ;
   25:  R[19:REPO_XOFFSET]=374.649    ;
   26:  R[20:REPO_YOFFSET]=107.95    ;
-  27:  R[21:PICKUP_CONSTANT]=19.265    ;
-  28:  R[22:RELEASE_CONSTANT]=20.5    ;
+  27:  R[21:PICKUP_CONSTANT]=20    ;
+  28:  R[22:RELEASE_CONSTANT]=20.125    ;
   29:   ;
   30:  ! Position Registers ;
   31:  ! -use for calibration ;
@@ -114,25 +114,25 @@ LOCAL_REGISTERS	= 0,0,0;
 P[1:"STATIC_DATUM"]{
    GP1:
 	UF : 1, UT : 1,		CONFIG : 'L, 0, 0, 0',
-	X =    50.971001  mm,	Y =   181.350006  mm,	Z =     9.258000  mm,
+	X =   -58.777000  mm,	Y =   175.552002  mm,	Z =    -2.949000  mm,
 	W =   180.000000 deg,	P =     0.000000 deg,	R =     0.000000 deg
 };
 P[2:"STATIC_REPO_RCP"]{
    GP1:
 	UF : 1, UT : 1,		CONFIG : 'L, 0, 0, 0',
-	X =    -3.966000  mm,	Y =   171.309998  mm,	Z =    27.500000  mm,
+	X =  -113.431000  mm,	Y =   165.684006  mm,	Z =    15.389000  mm,
 	W =   180.000000 deg,	P =     0.000000 deg,	R =     0.000000 deg
 };
 P[3:"STATIC_CAMERA"]{
    GP1:
 	UF : 1, UT : 1,		CONFIG : 'L, 0, 0, 0',
-	X =   259.316986  mm,	Y =   330.410004  mm,	Z =   165.720001  mm,
+	X =   147.315994  mm,	Y =   326.237000  mm,	Z =   152.604004  mm,
 	W =   180.000000 deg,	P =     0.000000 deg,	R =     0.000000 deg
 };
 P[4:"STATIC_MOD_RCP"]{
    GP1:
 	UF : 1, UT : 1,		CONFIG : 'L, 0, 0, 0',
-	X =   109.771004  mm,	Y =   189.729996  mm,	Z =    32.464001  mm,
+	X =     -.096000  mm,	Y =   184.095001  mm,	Z =    20.125000  mm,
 	W =   180.000000 deg,	P =     0.000000 deg,	R =     0.000000 deg
 };
 /END
