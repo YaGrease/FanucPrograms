@@ -21,3 +21,9 @@ check calibration along z axis as it transverses.
 Xfix y movement for second row and probably for second ice tray as well.
 recalibrate for y
 XBug fix slight offset caused by outdated P[]
+
+Recallibrate machine
+With Receptacle removing system program failure and removal. Test for continuation.
+Reprogram algorithm for finding orientation
+Test new movement systems
+new system for putting in multiple recipes
