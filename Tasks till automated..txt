@@ -22,8 +22,19 @@ Xfix y movement for second row and probably for second ice tray as well.
 recalibrate for y
 XBug fix slight offset caused by outdated P[]
 
-Recallibrate machine
+XRecallibrate machine
 With Receptacle removing system program failure and removal. Test for continuation.
 Reprogram algorithm for finding orientation
 Test new movement systems
 new system for putting in multiple recipes
+
+work instructions 
+check calibration quality
+Xfind shroud and prep to install it
+Xinsurance
+read scripture
+Xfinish laundry
+Xtry thin coverings for light. --_
+Xtest when it goes in focus. __^
+
+x when going from pin to pin in repo bad
