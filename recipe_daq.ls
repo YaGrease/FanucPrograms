@@ -23,7 +23,7 @@ LOCAL_REGISTERS	= 0,0,0;
 /APPL
 /MN
    1:  ! RECIPE_DAQ.TP ;
-   2:  R[100]=28    ;
+   2:  R[100:RECIPE_SIZE]=28    ;
    3:  R[101]=1    ;
    4:  R[102]=2    ;
    5:  R[103]=3    ;

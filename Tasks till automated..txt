@@ -12,14 +12,14 @@ Have 25 modules complete today.
 Other thoughts throughout the day.
   XTalk to Dave Reid about the shroud
 
-take out waits 
-21 mm release set
+xtake out waits 
+x21 mm release set
 think about new algorithm for looking at the receptacle
 work instructions
 test validate.py
-check calibration along z axis as it transverses.
+xcheck calibration along z axis as it transverses.
 Xfix y movement for second row and probably for second ice tray as well.
-recalibrate for y
+xrecalibrate for y
 XBug fix slight offset caused by outdated P[]
 
 XRecallibrate machine
@@ -38,3 +38,19 @@ Xtry thin coverings for light. --_
 Xtest when it goes in focus. __^
 
 x when going from pin to pin in repo bad
+xpay school loans
+take money from schwabb
+xpull out cash.(still need $60)
+
+xfine tune the camera sometimes it is not finding a match but very rarely.
+xSketch up ideas for a disposal system.
+make Fine that only move CNT100
+
+xkeep testing the depth of the push on the modules insert, so far working well already
+
+put in time off.
+Xtrack the peak regardless of it is above 90 and only return early if it is within the 90+ threshold Xotherswise go until all have been searched then go back to the highest.
+
+potentially have larger step with find max into a short refine.
+
+Label all veriables
