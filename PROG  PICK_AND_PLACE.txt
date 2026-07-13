@@ -3,8 +3,8 @@
 OWNER		= MNEDITOR;
 COMMENT		= "";
 PROG_SIZE	= 5378;
-CREATE		= DATE 26-07-13  TIME 13:46:18;
-MODIFIED	= DATE 26-07-13  TIME 13:46:18;
+CREATE		= DATE 26-07-10  TIME 12:56:02;
+MODIFIED	= DATE 26-07-10  TIME 12:56:02;
 FILE_NAME	= PICK_AND;
 VERSION		= 0;
 LINE_COUNT	= 245;
@@ -69,14 +69,17 @@ LOCAL_REGISTERS	= 0,0,0;
   45:  PR[22]=PR[3:TMP_CAMERA]    ;
   46:   ;
   47:   ;
+47.5:  ! Check if grabbed pin
   48:  CALL READ_SCORE    ;
   49:  IF R[57:CUR_SCORE]>0,JMP LBL[30] ;
   50:  MESSAGE[FAILED PICK] ;
   51:  PAUSE ;
+    :
+    :
   52:  ! FIND BEST ORIENTATION ;
   53:  ! Rotate to next step ;
   54:  LBL[30] ;
-  55:L PR[21] 1000deg/sec FINE    ;
+  55:L PR[21] 100mm/sec FINE    ;
   56:  WAIT    .02(sec) ;
   57:  CALL READ_SCORE    ;
   58:  IF R[57:CUR_SCORE]>R[55:BEST_SCORE],JMP LBL[31] ;
@@ -139,10 +142,13 @@ LOCAL_REGISTERS	= 0,0,0;
  115:  PR[4,3:TMP_MOD_RCP]=PR[4,3:TMP_MOD_RCP]-R[22:RELEASE_CONSTANT]    ;
  116:L PR[4:TMP_MOD_RCP] 100mm/sec FINE    ;
  117:   ;
+
  118:  ! Ascend without receptacle ;
  119:L PR[6:MOD_RCP_PSN] 100mm/sec FINE    ;
+
  120:  ! Move safely back to shroud ;
  121:J PR[20] 100% CNT30    ;
+
  122:  ! Check without receptacle ;
  123:  R[57:CUR_SCORE]=0    ;
  124:J PR[22] 100% FINE    ;
@@ -151,6 +157,8 @@ LOCAL_REGISTERS	= 0,0,0;
  127:  MESSAGE[PLACE FAILED CLEAR PART RESUME] ;
  128:  PAUSE ;
  129:   ;
+
+
  130:  !!! CHECK REPO STATUS START ;
  131:  LBL[38] ;
  132:  IF R[1:REPO_RCP_X]=22 AND R[2:REPO_RCP_Y]=20,JMP LBL[999] ;
