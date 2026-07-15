@@ -1,0 +1,89 @@
+/PROG  TEST_REPO_DST
+/ATTR
+OWNER		= MNEDITOR;
+COMMENT		= "";
+PROG_SIZE	= 1441;
+CREATE		= DATE 26-07-15  TIME 17:54:56;
+MODIFIED	= DATE 26-07-15  TIME 17:54:56;
+FILE_NAME	= TEST_REP;
+VERSION		= 0;
+LINE_COUNT	= 57;
+MEMORY_SIZE	= 1713;
+PROTECT		= READ_WRITE;
+TCD:  STACK_SIZE	= 0,
+      TASK_PRIORITY	= 50,
+      TIME_SLICE	= 0,
+      BUSY_LAMP_OFF	= 0,
+      ABORT_REQUEST	= 0,
+      PAUSE_REQUEST	= 0;
+DEFAULT_GROUP	= 1,*,*,*,*;
+CONTROL_CODE	= 00000000 00000000;
+LOCAL_REGISTERS	= 0,0,0;
+/APPL
+/APPL
+/MN
+   1:  R[3:REPO_RCP_UOFFSET]=2.799    ;
+   2:  R[19:REPO_XOFFSET]=374.967    ;
+   3:  R[20:REPO_YOFFSET]=107.886    ;
+   4:  R[21:PICKUP_CONSTANT]=20.7    ;
+   5:   ;
+   6:  ! First repo location ;
+   7:  PR[5:REPO_RCP_PSN]=P[1:STATIC_REPO_RCP]    ;
+   8:   ;
+   9:J PR[5:REPO_RCP_PSN] 100% FINE    ;
+  10:   ;
+  11:  PR[5,3:REPO_RCP_PSN]=PR[5,3:REPO_RCP_PSN]-R[21:PICKUP_CONSTANT]    ;
+  12:   ;
+  13:L PR[5:REPO_RCP_PSN] 100mm/sec FINE    ;
+  14:   ;
+  15:  PR[5,3:REPO_RCP_PSN]=PR[5,3:REPO_RCP_PSN]+R[21:PICKUP_CONSTANT]    ;
+  16:   ;
+  17:L PR[5:REPO_RCP_PSN] 100mm/sec FINE    ;
+  18:   ;
+  19:  ! Shift to second repo ;
+  20:  PR[5,1:REPO_RCP_PSN]=PR[5,1:REPO_RCP_PSN]+R[19:REPO_XOFFSET]    ;
+  21:   ;
+  22:J PR[5:REPO_RCP_PSN] 100% FINE    ;
+  23:   ;
+  24:  PR[5,3:REPO_RCP_PSN]=PR[5,3:REPO_RCP_PSN]-R[21:PICKUP_CONSTANT]    ;
+  25:   ;
+  26:L PR[5:REPO_RCP_PSN] 100mm/sec FINE    ;
+  27:   ;
+  28:  PR[5,3:REPO_RCP_PSN]=PR[5,3:REPO_RCP_PSN]+R[21:PICKUP_CONSTANT]    ;
+  29:   ;
+  30:L PR[5:REPO_RCP_PSN] 100mm/sec FINE    ;
+  31:   ;
+  32:  ! Shift to third repo ;
+  33:  PR[5:REPO_RCP_PSN]=P[1:STATIC_REPO_RCP]    ;
+  34:  PR[5,2:REPO_RCP_PSN]=PR[5,2:REPO_RCP_PSN]-R[20:REPO_YOFFSET]    ;
+  35:   ;
+  36:J PR[5:REPO_RCP_PSN] 100% FINE    ;
+  37:   ;
+  38:  PR[5,3:REPO_RCP_PSN]=PR[5,3:REPO_RCP_PSN]-R[21:PICKUP_CONSTANT]    ;
+  39:   ;
+  40:L PR[5:REPO_RCP_PSN] 100mm/sec FINE    ;
+  41:   ;
+  42:  PR[5,3:REPO_RCP_PSN]=PR[5,3:REPO_RCP_PSN]+R[21:PICKUP_CONSTANT]    ;
+  43:   ;
+  44:L PR[5:REPO_RCP_PSN] 100mm/sec FINE    ;
+  45:   ;
+  46:  ! Shift to fourth repo ;
+  47:  PR[5,1:REPO_RCP_PSN]=PR[5,1:REPO_RCP_PSN]+R[19:REPO_XOFFSET]    ;
+  48:   ;
+  49:J PR[5:REPO_RCP_PSN] 100% FINE    ;
+  50:   ;
+  51:  PR[5,3:REPO_RCP_PSN]=PR[5,3:REPO_RCP_PSN]-R[21:PICKUP_CONSTANT]    ;
+  52:   ;
+  53:L PR[5:REPO_RCP_PSN] 100mm/sec FINE    ;
+  54:   ;
+  55:  PR[5,3:REPO_RCP_PSN]=PR[5,3:REPO_RCP_PSN]+R[21:PICKUP_CONSTANT]    ;
+  56:   ;
+  57:L PR[5:REPO_RCP_PSN] 100mm/sec FINE    ;
+/POS
+P[1:"STATIC_REPO_RCP"]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'L, 0, 0, 0',
+	X =  -113.431000  mm,	Y =   165.684006  mm,	Z =    15.389000  mm,
+	W =   180.000000 deg,	P =     0.000000 deg,	R =     0.000000 deg
+};
+/END

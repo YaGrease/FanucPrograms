@@ -93,7 +93,8 @@
             }
             
         })
-        .finally(drawGrid());
+        .catch(error => console.log('load failed', error))
+        .finally(() => drawGrid());
     
 
     async function sendAllRecipes() 
