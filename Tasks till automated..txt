@@ -48,8 +48,28 @@ xkeep testing the depth of the push on the modules insert, so far working well a
 xput in time off.
 Xtrack the peak regardless of it is above 90 and only return early if it is within the 90+ threshold Xotherswise go until all have been searched then go back to the highest.
 
-potentially have larger step with find max into a short refine.
-Label all veriables
-With Receptacle removing system program failure and removal. Test for continuation.
+XWith Receptacle removing system program failure and removal. Test for continuation.
+Xcreate test class and test 10 ideas that I don't know the outcome for yet.
+XMaybe try just starting pick and place with updated values 
+Xwrite all the programs error handling so it is out of the way.
+Xput in more retry logic specifically for trying to put the pin in again when fails 3 times go to failure Xlocation(do for both repo pick and module place)
+Xmake it so it shows the recipe on the html thing instantly
+Xtest error handling code. (change if R[25]=3 in R[24] section)
+
+Ideas:
+XTry recipe with one pin
+XTry starting at the end of the Xfirst and second and third repository
+XTry putting it close to the ending to see the program end
+XFurthest top right position in repo 
+XFurthest top right position in module
+Bottom right pos repo
+Bottom right pos module
+Bottom left pos repo
+Bottom left pos module
+Try more aggressive CNT amounts at extreme positions
+
+optimize movement 
 work instructions
 test validate.py
+label all variables
+potentially have larger step with find max into a short refine. (redo the algorithm) check four sides
