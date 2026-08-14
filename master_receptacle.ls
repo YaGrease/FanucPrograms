@@ -2,13 +2,13 @@
 /ATTR
 OWNER		= MNEDITOR;
 COMMENT		= "";
-PROG_SIZE	= 2227;
-CREATE		= DATE 26-07-28  TIME 13:35:56;
-MODIFIED	= DATE 26-07-28  TIME 13:35:56;
+PROG_SIZE	= 2259;
+CREATE		= DATE 26-08-07  TIME 10:03:38;
+MODIFIED	= DATE 26-08-07  TIME 10:03:38;
 FILE_NAME	= MASTER_R;
 VERSION		= 0;
-LINE_COUNT	= 81;
-MEMORY_SIZE	= 2671;
+LINE_COUNT	= 83;
+MEMORY_SIZE	= 2695;
 PROTECT		= READ_WRITE;
 TCD:  STACK_SIZE	= 0,
       TASK_PRIORITY	= 50,
@@ -56,53 +56,55 @@ LOCAL_REGISTERS	= 0,0,0;
   32:  R[24:PICK_CNT_ERR]=0    ;
   33:  R[25:PLACE_CNT_ERR]=0    ;
   34:  R[26:FAILED_PICK_CNT]=0    ;
-  35:   ;
-  36:  ! Position Registers ;
-  37:  ! -use for calibration ;
-  38:  PR[1:TMP_DATUM]=P[1:STATIC_DATUM]    ;
-  39:   ;
-  40:  ! Camera location load ;
-  41:  PR[3:TMP_CAMERA]=P[3:STATIC_CAMERA]    ;
-  42:   ;
-  43:  ! Repository location load ;
-  44:  PR[2:TMP_REPO_RCP]=P[2:STATIC_REPO_RCP]    ;
-  45:  PR[5:REPO_RCP_PSN]=P[2:STATIC_REPO_RCP]    ;
-  46:  PR[7:TMP_REPO_RCP]=P[2:STATIC_REPO_RCP]    ;
-  47:  PR[9:REPO_PSN]=P[2:STATIC_REPO_RCP]    ;
-  48:   ;
-  49:  ! Module Location Load ;
-  50:  PR[4:TMP_MOD_RCP]=P[4:STATIC_MOD_RCP]    ;
-  51:  PR[6:MOD_RCP_PSN]=P[4:STATIC_MOD_RCP]    ;
-  52:  PR[8:MOD_PSN]=P[4:STATIC_MOD_RCP]    ;
-  53:  PR[10:TMP_MOD_RCP]=P[4:STATIC_MOD_RCP]    ;
-  54:  PR[11:ICE_TRAY_PSN]=P[4:STATIC_MOD_RCP]    ;
-  55:   ;
-  56:  ! Error Location Load ;
-  57:  PR[12:RELEASE_ONE]=P[6:STATIC_RLS_ONE]    ;
-  58:  PR[13:RELEASE_TWO]=P[7:STATIC_RLS_TWO]    ;
-  59:   ;
-  60:  MESSAGE[ENTER RECIPE IN R[10]] ;
-  61:  PAUSE ;
-  62:   ;
-  63:  ! Init data into R[100]-R[136] ;
-  64:  R[99:RECIPE_IDX]=101    ;
-  65:  R[98:RECIPE_LOWER_LIM]=0    ;
-  66:  R[97:RECIPE_UPPER_LIM]=37    ;
-  67:  R[96:RECIPE_LOCATION]=R[10:RECIPE_NUMBER]*37    ;
-  68:  R[95:RECIPE_BASE]=100    ;
-  69:  R[96:RECIPE_LOCATION]=R[95:RECIPE_BASE]+R[96:RECIPE_LOCATION]+3    ;
-  70:  LBL[1] ;
-  71:  IF R[98:RECIPE_LOWER_LIM]>=R[97:RECIPE_UPPER_LIM],JMP LBL[2] ;
-  72:  R[R[95]]=R[R[96]]    ;
-  73:  R[96:RECIPE_LOCATION]=R[96:RECIPE_LOCATION]+1    ;
-  74:  R[95:RECIPE_BASE]=R[95:RECIPE_BASE]+1    ;
-  75:  R[98:RECIPE_LOWER_LIM]=R[98:RECIPE_LOWER_LIM]+1    ;
-  76:  JMP LBL[1] ;
-  77:   ;
-  78:   ;
+  35:  R[27]=0    ;
+  36:  R[28]=0    ;
+  37:   ;
+  38:  ! Position Registers ;
+  39:  ! -use for calibration ;
+  40:  PR[1:TMP_DATUM]=P[1:STATIC_DATUM]    ;
+  41:   ;
+  42:  ! Camera location load ;
+  43:  PR[3:TMP_CAMERA]=P[3:STATIC_CAMERA]    ;
+  44:   ;
+  45:  ! Repository location load ;
+  46:  PR[2:TMP_REPO_RCP]=P[2:STATIC_REPO_RCP]    ;
+  47:  PR[5:REPO_RCP_PSN]=P[2:STATIC_REPO_RCP]    ;
+  48:  PR[7:TMP_REPO_RCP]=P[2:STATIC_REPO_RCP]    ;
+  49:  PR[9:REPO_PSN]=P[2:STATIC_REPO_RCP]    ;
+  50:   ;
+  51:  ! Module Location Load ;
+  52:  PR[4:TMP_MOD_RCP]=P[4:STATIC_MOD_RCP]    ;
+  53:  PR[6:MOD_RCP_PSN]=P[4:STATIC_MOD_RCP]    ;
+  54:  PR[8:MOD_PSN]=P[4:STATIC_MOD_RCP]    ;
+  55:  PR[10:TMP_MOD_RCP]=P[4:STATIC_MOD_RCP]    ;
+  56:  PR[11:ICE_TRAY_PSN]=P[4:STATIC_MOD_RCP]    ;
+  57:   ;
+  58:  ! Error Location Load ;
+  59:  PR[12:RELEASE_ONE]=P[6:STATIC_RLS_ONE]    ;
+  60:  PR[13:RELEASE_TWO]=P[7:STATIC_RLS_TWO]    ;
+  61:   ;
+  62:  MESSAGE[ENTER RECIPE IN R[10]] ;
+  63:  PAUSE ;
+  64:   ;
+  65:  ! Init data into R[100]-R[136] ;
+  66:  R[99:RECIPE_IDX]=101    ;
+  67:  R[98:RECIPE_LOWER_LIM]=0    ;
+  68:  R[97:RECIPE_UPPER_LIM]=37    ;
+  69:  R[96:RECIPE_LOCATION]=R[10:RECIPE_NUMBER   ]*37    ;
+  70:  R[95:RECIPE_BASE]=100    ;
+  71:  R[96:RECIPE_LOCATION]=R[95:RECIPE_BASE]+R[96:RECIPE_LOCATION]+3    ;
+  72:  LBL[1] ;
+  73:  IF R[98:RECIPE_LOWER_LIM]>=R[97:RECIPE_UPPER_LIM],JMP LBL[2] ;
+  74:  R[R[95]]=R[R[96]]    ;
+  75:  R[96:RECIPE_LOCATION]=R[96:RECIPE_LOCATION]+1    ;
+  76:  R[95:RECIPE_BASE]=R[95:RECIPE_BASE]+1    ;
+  77:  R[98:RECIPE_LOWER_LIM]=R[98:RECIPE_LOWER_LIM]+1    ;
+  78:  JMP LBL[1] ;
   79:   ;
-  80:  LBL[2] ;
-  81:  CALL PICK_AND_PLACE    ;
+  80:   ;
+  81:   ;
+  82:  LBL[2] ;
+  83:  CALL PICK_AND_PLACE    ;
 /POS
 P[1:"STATIC_DATUM"]{
    GP1:
@@ -137,13 +139,13 @@ P[5:"STATIC_HOME"]{
 P[6:"STATIC_RLS_ONE"]{
    GP1:
 	UF : 1, UT : 1,		CONFIG : 'L, 0, 0, 0',
-	X =   407.864990  mm,	Y =   200.850998  mm,	Z =   118.000000  mm,
+	X =   407.864990  mm,	Y =   200.850998  mm,	Z =   125.000000  mm,
 	W =   180.000000 deg,	P =     0.000000 deg,	R =     0.000000 deg
 };
 P[7:"STATIC_RLS_TWO"]{
    GP1:
 	UF : 1, UT : 1,		CONFIG : 'L, 0, 0, 0',
-	X =   428.390015  mm,	Y =   328.032013  mm,	Z =    63.390999  mm,
+	X =   425.929993  mm,	Y =   339.316986  mm,	Z =    28.601999  mm,
 	W =   180.000000 deg,	P =     0.000000 deg,	R =     0.000000 deg
 };
 /END
