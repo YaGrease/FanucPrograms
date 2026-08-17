@@ -2,13 +2,13 @@
 /ATTR
 OWNER		= MNEDITOR;
 COMMENT		= "Sub-program for ";
-PROG_SIZE	= 448;
-CREATE		= DATE 26-06-17  TIME 12:27:18;
-MODIFIED	= DATE 26-07-31  TIME 10:07:10;
+PROG_SIZE	= 886;
+CREATE		= DATE 26-08-17  TIME 14:50:38;
+MODIFIED	= DATE 26-08-17  TIME 14:50:38;
 FILE_NAME	= READ_SCO;
 VERSION		= 0;
-LINE_COUNT	= 17;
-MEMORY_SIZE	= 884;
+LINE_COUNT	= 30;
+MEMORY_SIZE	= 1270;
 PROTECT		= READ_WRITE;
 TCD:  STACK_SIZE	= 0,
       TASK_PRIORITY	= 50,
@@ -22,22 +22,35 @@ LOCAL_REGISTERS	= 0,0,0;
 /APPL
 /APPL
 /MN
-   1:  IF R[27]=1,JMP LBL[40] ;
-   2:  VISION RUN_FIND 'RCP_FINDER'    ;
-   3:  VISION GET_OFFSET 'RCP_FINDER' VR[1] JMP LBL[38] ;
-   4:  JMP LBL[41] ;
-   5:   ;
-   6:  LBL[40] ;
-   7:  VISION RUN_FIND 'RCP_ERROR'    ;
-   8:  VISION GET_OFFSET 'RCP_ERROR' VR[1] JMP LBL[38] ;
-   9:   ;
-  10:  LBL[41] ;
-  11:  R[57]=VR[1].MES[1] ;
-  12:  JMP LBL[39] ;
-  13:   ;
-  14:  LBL[38] ;
-  15:  R[57:CUR_SCORE]=0    ;
-  16:   ;
-  17:  LBL[39] ;
+   1:  ! READ_SCORE (Computer vision) ;
+   2:   ;
+   3:  ! Checks and scores based off of ;
+   4:  ! precise orientation of the ;
+   5:  ! receptacle ;
+   6:  IF R[27:CAMERA_MODE]=1,JMP LBL[40] ;
+   7:  VISION RUN_FIND 'RCP_FINDER'    ;
+   8:  VISION GET_OFFSET 'RCP_FINDER' VR[1] JMP LBL[38] ;
+   9:  JMP LBL[41] ;
+  10:   ;
+  11:  ! Checks and scores based off if ;
+  12:  ! a pin is being held my the end  ;
+  13:  ! effector or not. ;
+  14:  LBL[40] ;
+  15:  VISION RUN_FIND 'RCP_ERROR'    ;
+  16:  VISION GET_OFFSET 'RCP_ERROR' VR[1] JMP LBL[38] ;
+  17:   ;
+  18:  ! Both vision processes pass the ;
+  19:  ! retrieved data to a register ;
+  20:  LBL[41] ;
+  21:  R[57]=VR[1].MES[1] ;
+  22:  JMP LBL[39] ;
+  23:   ;
+  24:  ! Fail case for when vision ;
+  25:  ! processes fail to find and ;
+  26:  ! sets to a default score of 0 ;
+  27:  LBL[38] ;
+  28:  R[57:CUR_SCORE]=0    ;
+  29:   ;
+  30:  LBL[39] ;
 /POS
 /END

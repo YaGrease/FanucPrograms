@@ -66,10 +66,128 @@ Bottom right pos repo
 Bottom right pos module
 Bottom left pos repo
 Bottom left pos module
-Try more aggressive CNT amounts at extreme positions
+XTry more aggressive CNT amounts at extreme positions
 
-optimize movement 
+Xlunchbox out in garage
+Xunsubscribe from google photos.
+Xoptimize movement 
 work instructions
 test validate.py
 label all variables
 potentially have larger step with find max into a short refine. (redo the algorithm) check four sides
+Xmake place error increment the 
+
+XTry a blob and watch what the scores are make a two step search. Keep the current one as a backup. If the advanced search fails then fallback to the other one. 
+
+Xwrite a second program that just spins and records values of a blob
+
+17, 15, 21 , 20, 18,
+
+
+
+261.369
+-113.481
+54.804
+57.603
+165.654
+
+TO DO today:
+Xassemble enclosure
+Xassemble shelving
+Xfix movement issue
+
+test output. 
+
+Find reasons to use and pay for AI
+Write up work instructions to pause, and start the robot, shut it off, etc...
+bike chain stuff and tire
+error checking and fixing
+machine new parts
+
+Xpower on sequence
+
+Xpower off sequence
+
+restart sequence
+
+Xresetting errors
+
+Xbad receptacles
+
+pause and play
+
+change the camera
+make it slightly less accurate to speed it up. 
+Increase the correct range
+Xdon't forget to change the minimum score threshold so that failed pick doesn't trigger
+Be with it for one full run through and label everything. 
+Xcheck the time constraint on the error check failed pick it shouldn't be 0.5 should be 0.05sec
+play with tolerance level of sec on rotation of camera check.
+Xattempt change speeds of the slow one when go to grab pick making it faster a little bit. 
+If it fails the camera is there anything I can do to catch the error?
+When it fails on the same hole multiple times skip the hole.
+
+
+if above threshold or not store best orient always if have new best.
+Xmake sure that after three failed attempts to pick up in a row the program pauses and asks are there any pins left?
+
+
+https://jobs.northropgrumman.com/careers?start=0&pid=1340073468982&sort_by=timestamp&filter_clearance_type=none&filter_employment_type=Full+time%2CPart+time&filter_experience_level=Entry%2CIntern&filter_department=Software+Engineering%2CInformation+Technology%2CData+%26+Analytics
+
+https://jobs.northropgrumman.com/careers?start=0&pid=1340073465006&sort_by=timestamp&filter_security_clearance=no&filter_employment_type=Full+time%2CPart+time&filter_experience_level=Entry%2CIntern&filter_department=Software+Engineering%2CInformation+Technology%2CData+%26+Analytics
+
+
+I need to make sure to test a lot more.
+
+Reach out to Mikey's attorney contact for more information about which rituals are allowed. 
+
+
+Hey Geoffrey, (If you just want raw info a summary is below.)
+
+I'm a friend of Mikey Greer (his cousin). He said he knows you pretty well and that you give great advice in assisting people with VISA questions. I've got a question I feel like I should really run by someone with knowledge, because I don't want to make and big mistakes. Mikey said you would be great to talk to and I'll try to make it a question you can answer in one sitting. If I'm reaching out to you in the wrong way or you need me to contact you about questions after formal agreement please let me know. I've already filed a K-1 VISA and I got through that just fine I feel I made it super organized with clear pictures, proof of intent to marry, and lots of other things. I did that back on April 13th, 2026. Now I've been in a place where my fiance wants an event in her home country and since she wants to do this before she comes to America and it is where her family is she wants a larger scale things, because her culture is important to her. So I've been helping her prepare and she's come up with the idea of the event she wants to have. It is a very wedding-like event, and I'll be specific with what I mean. 
+
+In Cambodia they have official engagement events can ពិធីភ្ជាប់ពិក្យ which just means engagement ceremony so we thought we would do that. I'd already given her a ring to get started, but she wanted a little more. Then she started thinking of other cultural ceremonies she doesn't want to miss out on, so she has thought to include events such as សំពះផ្ទឺម(this is the part of the tying the string that makes it super wedding like and is probably the biggest indicator of a wedding), ហែរជំនួន(giving gift to family in exchange for daughter, usually wedding can be done before), ចងដែរ(tying the string, done for engagement and wedding upscaled for weddings), បំពាក់ចិញ្ចៀន(ring exchange), and កាត់សក់(cutting hair to symbolize giving blessings in preparation for new couple). I thought it would be fine since we weren't doing any documentation and in Cambodia you remain single until things are filed and dealt with the commune office, 10-day posts are made, and then the civil process is finished. I do speak the language and I served a mission there and through conversations with people I've come to know that some of these ceremonies are exclusively done for weddings though with recent culture shifts of the younger generation it has been a little more confusing. I'm just in a state of worry and I want to be able to go and have an event with little to no worry of what happens around me while I'm there. I want to be confident that what I am doing will not jeoparadize the status of our K-1 VISA since that is the last thing I want. I've already paid for about $2,500 of it and I got 6 family member with travel plans booked not including myself and I'm starting to feel the pressure a bit. I'm an honest man and have a hard time lying so if I feel guilty about something I won't try to hide it. I just want to know what would be allowed and what would not be allowed. Right now I just feel like our event being labeled as an engagement ceremony is a bit of a misrepresentation even though it would achieve no legal marriage status and we aren't calling a monk in to marry us. I just really need some peace of mind and Mikey said you'd great. If I need to I can scale things back and make changes even now. I'd probably be out a bit of money, but if it means keeping our K-1 visa going confident that we won't get penalized or have to deal with further investigation I will make the necessary changes and take the loss. I'd really like to still keep an event as people have already booked travel for it. If you do have any other suggestions though you can let me know as all the people that booked travel would likely be able to get refunds right now. I'm just thinking through things logically, but I'm realizing if something needs to be changed now is the last chance I probably can without things being catastrophic. I'm willing to do anything if it means I can be with her here in america sooner than later. Thank you for reading through this. If you have any questions please ask and I'll be willing to write the details out clearly. 
+
+My question: Would participating in the traditional Khmer ceremonies listed below with no civil registration of any kind create a legal marriage under Cambodian law, or otherwise jeopardize my pending K-1?
+
+Background:
+
+- I'm a US citizen. I filed I-129F for my Cambodian fiancée; USCIS received it April 13, 2026. Neither of us has been previously married.
+- She wants a large family event in Cambodia before coming to the US. It's scheduled for September 19th, 2026, with roughly 100 guests. Six of my family members have already booked travel, and I'm about $2,500 in.
+- I speak Khmer and served a mission in Cambodia, so I understand the ceremonies reasonably well which is exactly why I'm concerned.
+
+The ceremonies planned:
+- ពិធីភ្ជាប់ពាក្យ — engagement ceremony
+- ហែរជំនួន — procession of gifts to the bride's family
+- បំពាក់ចិញ្ចៀន — ring exchange
+- ចងដៃ — wrist tying
+- សំពះផ្ទឹម — knot tying (this is the one I'm most concerned about; it's the strongest wedding indicator)
+- កាត់សក់ — symbolic hair cutting
+
+What we will NOT do:
+- No marriage application to the commune/sangkat
+- No 10-day public posting
+- No process under Sub-Decree 183 (MFAIC / Ministry of Interior) for Cambodian–foreigner marriage
+- No monk performing a marriage
+- No marriage certificate sought or obtained
+
+James
+
+Xmeet with Sam Johanson
+
+
+
+Do testing with the temperature.
+try to do softfloat resets.
+
+Create function blocks that test code or even go through simulation phases.
+Look through summit to be able to get better error handling code. 
+
+
+
+What level of automation are we at already? Can we run the machines without human interaction. This will help me understand the next level of automation we want to get to. It also gives me perspective for what kind of issues we might be dealing with. 
+Bring up the problems with collision detection being in software. There are safety flaws and big ones with it. We have to be careful and we have to make sure that when we deal with safety issues that it won't get caught up in an infinite loop or some other section of code there are a lot of danger points. Building an electrical trip system, or even a separate program that has no contingencies with the other programs. 
+
+What is a realistic six-month goal?
+What is a realistic 2-3 year goal?
+Is there any way I can see or learn how these things are run on the machines in person?
